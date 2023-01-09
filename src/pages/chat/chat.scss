@@ -1,0 +1,161 @@
+page-chat {
+	.innerMessage {
+		display: inline-block;
+		padding: 5px 10px;
+		background: color($colors, 'primary');
+		margin: 5px;
+		color: white;
+		border-radius: 3px;
+	}
+	.innerMessage.messageRight {
+		background: color($colors, 'secondary');
+	}
+	.userNameClass {
+		font-weight: bold;
+		font-size: 80%;
+    }
+    .timeClass{
+		font-size: 70%;
+    }
+	.messageClass {
+		font-size: 120%;
+	}
+	.elem button {
+	    border-radius: 100%;
+	    margin-top: 10%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 80%;
+	    height: 80%;
+	}
+	.elem {
+		position: relative;
+		min-width: 50px;
+	}
+	.photoDivCss{
+		vertical-align:middle;
+		margin:auto;
+		background-color: transparent;
+	}
+	#cameraCss{
+		display: inline;
+	}
+	#galleryCss{
+		display:inline;
+	}
+	#msgImageCss{
+		height:100%;
+		object-fit:resize;
+	}
+	#msgInputCss{
+		vertical-align:middle;
+		margin-top:5%;
+	}
+	div#footer div.elem:first-child {
+	    flex-grow: 1;
+	}
+	div#footer {
+	    display: flex;
+	    flex-direction: row;
+	    align-items: stretch;
+	}
+
+	ion-input{
+		padding-left: 15px;
+		font-size: 125%;
+	}
+	ion-toolbar {
+		margin: 0;
+		padding: 0!important;
+	}
+	.chat:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.messageLeft {
+		float: left;
+	}
+	.messageRight {
+		float: right;
+	}
+
+	.chat.special .innerMessage .messageClass{
+		background: white;
+		display: inline-block;
+		padding: 0 10px;
+	}
+
+	.chat.special .innerMessage:before{
+		content: '';
+		height: 2px;
+		background: #eee;
+		display: block;
+		top: 50%;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		z-index: -1;
+	}
+
+	.chat.special .innerMessage{
+		background: transparent;
+		color: black;
+		font-size: 80%;
+		width: 100%;
+		float: none;
+		text-align: center;
+		position: relative;
+	}
+
+
+	//msgTask css
+	.msgTaskCss{
+		display:inline-table;
+		color:black;
+	}
+
+	//task css
+	#taskContent{
+		width:100%;
+		height:70%;
+		top:50px;
+	}
+	#taskImgcss{
+		float:left;
+	}
+	.taskTextCss{
+		vertical-align: middle;
+		margin:auto;
+	}
+	#taskTextDiv{
+		text-align: left;
+		vertical-align: middle;
+		margin:auto;
+		padding-top:10%;
+	}
+	#taskBtnCss{
+	border-radius: 5%;
+	font-size: 0.8em;
+	width:50%;
+	display:block;
+	height:30px;
+	margin-bottom:50px;
+	margin:auto;
+	}
+	#closeTaskDiv{
+		float:right;
+	}
+	#closeIcon{
+		size: 13px;	
+	}
+	.tickCss{
+		float:right;
+		font-size: 0.8em;
+	}
+
+	.forwardPopCss{
+		width: 50px;
+	}
+}

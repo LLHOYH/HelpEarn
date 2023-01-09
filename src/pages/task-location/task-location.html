@@ -1,0 +1,28 @@
+<!--
+  Generated template for the TaskLocationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+      <ion-title>task-location</ion-title>
+      <div id="doneCss" (click)="Done()">Done</div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar placeholder="" name="" [(ngModel)]="confirmLocation" (ionInput)="updateSearchResults($event)">
+  </ion-searchbar>
+
+  <!-- <button ion-button (click)="saveToGallery()">Save</button> -->
+
+  <ion-list>
+    <ion-item *ngFor="let item of autocompleteItems" (click)="bringToInput(item.description)">
+      {{ item.description }}
+    </ion-item>
+  </ion-list>
+
+  <div #map id="my-map"></div>
+
+</ion-content>

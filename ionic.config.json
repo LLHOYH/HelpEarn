@@ -1,0 +1,7 @@
+{
+  "name": "HelpEarn",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,100 @@
+<!--
+Generated template for the ChatPage page.
+See http://ionicframework.com/docs/components/#navigation for more info on
+Ionic pages and navigation.
+-->
+<ion-header style="position: relative;">
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon id="closeIcon" name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{chat.receiverKey}}
+    </ion-title>
+  </ion-navbar>
+  <div id="taskContent" padding style="height: 70%;" *ngIf="showRecTask" style="position: absolute;">
+      <ion-card id="taskCard">
+          <div id="closeTaskDiv">
+              <button ion-button closeIcon style="border-radius: 50%;" small icon-only (click)="closeRecTask()">
+                <ion-icon name="close"></ion-icon>
+              </button>
+            </div>
+        <img [src]="recTask.contentPic" id="taskImgCss" onerror="this.style.display='none'" style="float:left;height:100px;width:100px;">
+        <div id="taskTextDiv">
+        <h3 class="taskTextCss" style="font-weight: bold">{{recTask.taskName}}</h3>
+        <p class="taskTextCss">{{recTask.contentDesc}}</p>
+          <p class="taskTextCss">${{recTask.price}}</p>
+          <button id="taskBtnCss" ion-button block (click)="sendMessage('recTask')">Send This To Requestor</button>
+        </div>
+
+      </ion-card> 
+    </div>
+
+
+</ion-header>
+  
+  
+  <ion-content padding>
+          
+      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+          </ion-refresher-content>
+        </ion-refresher>
+
+    <div>
+      <div tappable *ngFor="let chat of chats, let last = last" [class]="chat.specialMessage ? 'chat special' : 'chat'"
+      id="chatMessages" (pressup)="presentPopover($event, chat)">
+        <div [class]="chat.senderKey == senderKey ? 'innerMessage messageRight' : 'innerMessage messageLeft'">
+          <div class="displayIDClass">{{ chat.displayID }}</div>
+          <div class="messageClass">{{ chat.msgContent }}</div>
+          <img [src]="chat.msgImage" (click)="presentImage(chat.msgImage)" onerror="this.style.display='none'"/>
+
+
+
+          <div id="taskContent" padding *ngIf="chat.msgTask" >
+            <ion-card id="taskCard" (click)="goTaskPage(chat.taskKey)">
+              <img [src]="chat.taskContentPic" onerror="this.style.display='none'" id="msgTaskImgCss" style="float:left;height:100px;width:100px;">
+              <div id="taskTextDiv">
+              <h3 class="msgTaskCss" style="font-weight: bold">{{chat.taskName}}</h3>
+              <p class="msgTaskCss">{{chat.taskContentDesc}}</p>
+                <p class="msgTaskCss">${{chat.taskPrice}}</p>
+              </div>  
+            </ion-card> 
+
+      </div>
+<div>
+      <ion-icon class="tickCss" name="checkmark" *ngIf="chat.sendFirStatus"></ion-icon>
+      <ion-icon class="tickCss" name="checkmark" *ngIf="chat.sendSecStatus" ></ion-icon>
+    </div>
+          <div class="timeClass">{{ chat.timeSend }}</div>
+
+
+        {{last? fixedAtBottom():''}}
+
+      </div>
+    </div>
+    </div>
+  
+  <!-- <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+
+  </ion-content>
+  
+  <ion-footer >
+    <ion-toolbar color="light">
+      <div id="footer">
+          <div class="photoDivCss"><img src="../../assets/imgs/Camera.png" id="cameraCss" style="height:60px;width:60px;" (click)="takePicture()"></div>
+          <div class="photoDivCss"><img src="../../assets/imgs/gallery.png" id="galleryCss" style="height:50px;width:50px;"  (click)="getImage()"></div>
+        <div class="elem"><ion-input type="text" id="msgInputCss" [(ngModel)]="chat.msgContent"></ion-input></div>
+        <div class="elem"><button ion-button round icon-only (click)="sendMessage('textMsg')"><ion-icon name="send"></ion-icon> </button></div>
+      </div>
+    </ion-toolbar>
+  </ion-footer>

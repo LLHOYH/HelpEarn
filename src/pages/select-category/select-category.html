@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Select Category
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page2">
+
+<div id="infoTextDiv">
+  <p>In order for us to broadcast your needs to the correct group of helpers, please choose a category that this task falls under...</p>
+</div>
+
+  <ion-grid class="button-group">
+    <ion-row class="btnRow">
+      <ion-col class="btnCol">
+        <button class="buttonCss" ion-button [ngStyle]="{'background-color': buttonColorGeneral}" (click)="confirmOnClick('General')">
+          <img src="../../assets/imgs/task.png" class="imgCss">
+          <div class="textCss">
+            General
+          </div>
+        </button>
+      </ion-col>
+      <ion-col class="btnCol">
+          <button class="buttonCss" ion-button [ngStyle]="{'background-color': buttonColorDelivery}" (click)="confirmOnClick('Delivery')">
+          <img src="../../assets/imgs/truck.png" class="imgCss">
+          <div class="textCss">
+            Delivery
+              </div>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="btnRow">
+        <ion-col class="btnCol">
+            <button class="buttonCss" ion-button [ngStyle]="{'background-color': buttonColorRepair}" (click)="confirmOnClick('Repair')">
+          <img src="../../assets/imgs/repairing.png" class="imgCss">
+          <div class="textCss">
+            Repair
+              </div>
+        </button>
+      </ion-col>
+      <ion-col class="btnCol">
+          <button class="buttonCss" ion-button [ngStyle]="{'background-color': buttonColorCleaning}" (click)="confirmOnClick('Cleaning')">
+          <img src="../../assets/imgs/floormap.png" class="imgCss">
+          <div class="textCss">
+            Cleaning
+              </div>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="btnRow">
+        <ion-col class="btnCol">
+            <button class="buttonCss" ion-button [ngStyle]="{'background-color': buttonColorProfessional}" (click)="confirmOnClick('Professional')">
+          <img src="../../assets/imgs/employee.png" class="imgCss">
+          <div class="textCss">
+            Professional
+              </div>
+        </button>
+      </ion-col>
+      <ion-col class="btnCol">
+          <button class="buttonCss" ion-button [ngStyle]="{'background-color': buttonColorRental}" (click)="confirmOnClick('Rental')">
+          <img src="../../assets/imgs/real-estate.png" class="imgCss" ng-value="">
+          <div class="textCss">
+            Rental
+
+              </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <br />
+
+<button ion-button block color="theme" (click)="SubmitTask()">Continue to Payment</button>
+
+
+</ion-content>

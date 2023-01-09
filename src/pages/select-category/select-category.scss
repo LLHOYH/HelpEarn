@@ -1,0 +1,52 @@
+page-select-category {
+
+    .buttonCss{
+        background-color:white;
+        margin:auto;
+        color:black;
+        display:block;
+        width:50%;
+        height:70%;
+        font-size:0.3;
+    }
+
+    .imgCss{
+        display:block;
+        width:50%;
+        height:50%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .buttonCss{
+        margin:auto;
+        height:100%;
+        width:100%;
+    }
+
+    .textCss{
+        float:right;
+    }
+
+    ion-row{
+        height:100%;
+        width:100%;
+    }
+
+    ion-col{
+        height:100%;
+        width:200%;
+    }
+
+    #infoTextDiv{
+        color:#f4b042;
+        margin:auto;
+        text-align:center;
+    }
+
+    ion-grid{
+        height:70%;
+    }
+
+    
+}

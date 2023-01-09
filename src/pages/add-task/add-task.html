@@ -1,0 +1,189 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Add Task
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding id="page1">
+
+  <form #submitTaskForm="ngForm" id="addTask-form">
+
+
+    <div>
+      <ion-label class="labelCss">
+        Task Name
+      </ion-label>
+      <ion-item class="taskDiv" id="addTask-Name">
+
+        <ion-input type="text" [(ngModel)]="task.taskName" name="taskName" #taskName="ngModel" placeholder="" required></ion-input>
+      </ion-item>
+
+      <div class="validateDiv">
+        <p class="validateWarning" ion-text *ngIf="taskName.invalid && submitTaskForm.submitted" color="danger" padding-left>
+          This field is required</p>
+      </div>
+    </div>
+
+
+
+
+
+    <div>
+      <ion-label class="labelCss">
+        Content Description
+      </ion-label>
+      <ion-item class="taskDiv" id="addTask-Desc">
+
+        <p></p>
+        <ion-input type="text" [(ngModel)]="task.contentDesc" #contentDesc="ngModel" name="Description" placeholder="" required></ion-input>
+      </ion-item>
+
+      <div class="validateDiv">
+        <p class="validateWarning" ion-text *ngIf="contentDesc.invalid && submitTaskForm.submitted" color="danger" padding-left>
+          This field is required </p>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div>
+      <ion-label class="labelCss" style="float:left">
+        Location
+      </ion-label>
+      <button ion-button icon-only (click)="goSelectLocation()" style="display: block;background-color:transparent;">
+          <ion-icon name="locate" style="color:black"></ion-icon>
+        </button>
+      <ion-item class="taskDiv" id="addTask-Loc">
+
+
+        {{task.location}} 
+      </ion-item>
+    </div>
+
+
+
+
+    <div>
+      <ion-label class="labelCss">
+        Number of helpers need
+      </ion-label>
+      <ion-item class="taskDiv" id="addTask-Loc">
+
+        <ion-input type="number" [(ngModel)]="task.helperNum" #helperNum="ngModel" name="Number" placeholder="" required></ion-input>
+      </ion-item>
+
+      <div class="validateDiv">
+        <p class="validateWarning" ion-text *ngIf="helperNum.invalid && submitTaskForm.submitted" color="danger" padding-left>
+          This field is required </p>
+      </div>
+    </div>
+
+
+
+    <div>
+      <ion-label class="labelCss">
+        I want it to be completed by
+      </ion-label>
+      <ion-item class="taskDiv" id="addTask-Date">
+
+        <ion-datetime [(ngModel)]="task.completeDate" name="date" display-format="MMM DD, YYYY HH:mm" #completeDate="ngModel" required></ion-datetime>
+      </ion-item>
+
+      <div class="validateDiv">
+        <p class="validateWarning" ion-text *ngIf="completeDate.invalid && submitTaskForm.submitted" color="danger" padding-left>
+          This field is required </p>
+      </div>
+    </div>
+
+
+
+
+    <div>
+      <ion-label class="labelCss">
+        Preferred Gender
+      </ion-label>
+      <ion-item class="taskDiv" id="addTask-Gender">
+
+        <!-- <button ion-button slot="end" fill="clear" (click)="ShowPicker()">Select</button> -->
+        <ion-select [(ngModel)]="task.preferGender" name="Gender" #preferGender="ngModel" required>
+          <ion-option *ngFor="let gender of genders" [value]="gender">
+            {{gender}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="validateDiv">
+        <p class="validateWarning" ion-text *ngIf="preferGender.invalid && submitTaskForm.submitted" color="danger" padding-left>
+          This field is required </p>
+      </div>
+    </div>
+
+
+
+
+    <div>
+      <ion-label class="labelCss">
+        Any Skills Needed
+      </ion-label>
+      <ion-item class="taskDiv" id="addTask-Skiils">
+
+        <ion-input type="text" [(ngModel)]="task.skillsNeeded" name="Skills" placeholder="" #skillsNeeded="ngModel" required></ion-input>
+      </ion-item>
+
+      <div class="validateDiv">
+        <p class="validateWarning" ion-text *ngIf="skillsNeeded.invalid && submitTaskForm.submitted" color="danger" padding-left>
+          This field is required </p>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="taskDiv" id="addTask-Picture">
+        <ion-label class="labelCss">
+          Picture Upload
+        </ion-label>
+        <button class="pictureUpCss" ion-button icon-only solid (click)="getImage()" margin-left>
+          <ion-icon name="add">
+          </ion-icon>
+        </button>
+      </div>
+
+      <img [src]="photo" onerror="this.style.display='none'" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;"
+      />
+    </div>
+
+
+
+    <div>
+      <ion-label class="labelCss">
+        Price Offered
+      </ion-label>
+      <ion-item class="taskDiv" id="addTask-Price">
+        <ion-label>
+          $
+        </ion-label>
+        <ion-input type="number" [(ngModel)]="task.price" name="price" placeholder="" #price="ngModel" requried></ion-input>
+      </ion-item>
+
+      <div class="validateDiv">
+        <p class="validateWarning" ion-text *ngIf="price.invalid && submitTaskForm.submitted" color="danger" padding-left>
+          This field is required </p>
+      </div>
+    </div>
+
+
+
+
+    <button type="submit" ion-button color="theme" block (click)="submitTask(submitTaskForm)">Next</button>
+  </form>
+
+</ion-content>

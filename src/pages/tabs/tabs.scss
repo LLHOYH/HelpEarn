@@ -1,0 +1,93 @@
+page-tabs {
+    .tabbar, .tabs-ios, .tabs-md , .tabs-wp{
+        .tab-button-icon {
+            background-repeat:no-repeat;
+            background-position:center;
+            height:24px;
+            width:24px;
+            background-size:contain;
+            -webkit-background-size: contain;
+            -moz-background-size: contain;
+            -o-background-size: contain;
+            &:before {
+                display:none;
+            }
+        }
+    }
+    
+
+    
+    .tabs-md {
+      a[aria-selected=false]{
+        .tab-button-icon[ng-reflect-name=taskIcon], .tab-button-icon[aria-label=taskIcon] {
+            background-image: url(../assets/icon/list.png);
+          }
+          .tab-button-icon[ng-reflect-name=addIcon], .tab-button-icon[aria-label=addIcon] {
+            background-image: url(../assets/icon/add.png);
+          }
+          .tab-button-icon[ng-reflect-name=activityIcon], .tab-button-icon[aria-label=activityIcon] {
+            background-image: url(../assets/icon/star.png);
+          }
+          .tab-button-icon[ng-reflect-name=profileIcon], .tab-button-icon[aria-label=profileIcon] {
+              background-image:url(../assets/icon/user.png);
+            }
+      }
+    
+     a[aria-selected=true] {
+       //führ eventuellen text
+       //span {
+          //color: #f00; //whatever colour you want to use for the text
+        //}
+        .tab-button-icon[ng-reflect-name=taskIcon], .tab-button-icon[aria-label=taskIcon] {
+            background-image: url(../assets/icon/list.png);
+          }
+          .tab-button-icon[ng-reflect-name=addIcon], .tab-button-icon[aria-label=addIcon] {
+            background-image: url(../assets/icon/add.png);
+          }
+          .tab-button-icon[ng-reflect-name=activityIcon], .tab-button-icon[aria-label=activityIcon] {
+            background-image: url(../assets/icon/star.png);
+          }
+          .tab-button-icon[ng-reflect-name=profileIcon], .tab-button-icon[aria-label=profileIcon] {
+              background-image:url(../assets/icon/user.png);
+            }
+      }
+    }
+    
+    .tabs-wp {
+      a[aria-selected=false]{
+        .tab-button-icon[ng-reflect-name=taskIcon], .tab-button-icon[aria-label=taskIcon] {
+            background-image: url(../assets/icon/list.png);
+          }
+          .tab-button-icon[ng-reflect-name=addIcon], .tab-button-icon[aria-label=addIcon] {
+            background-image: url(../assets/icon/add.png);
+          }
+          .tab-button-icon[ng-reflect-name=activityIcon], .tab-button-icon[aria-label=activityIcon] {
+            background-image: url(../assets/icon/star.png);
+          }
+          .tab-button-icon[ng-reflect-name=profileIcon], .tab-button-icon[aria-label=profileIcon] {
+              background-image:url(../assets/icon/user.png);
+            }
+
+      }
+    
+     a[aria-selected=true] {
+       //führ eventuellen text
+       //span {
+          //color: #f00; //whatever colour you want to use for the text
+        //}
+        .tab-button-icon[ng-reflect-name=taskIcon], .tab-button-icon[aria-label=taskIcon] {
+            background-image: url(../assets/icon/list.png);
+          }
+          .tab-button-icon[ng-reflect-name=addIcon], .tab-button-icon[aria-label=addIcon] {
+            background-image: url(../assets/icon/add.png);
+          }
+          .tab-button-icon[ng-reflect-name=activityIcon], .tab-button-icon[aria-label=activityIcon] {
+            background-image: url(../assets/icon/star.png);
+          }
+          .tab-button-icon[ng-reflect-name=profileIcon], .tab-button-icon[aria-label=profileIcon] {
+              background-image:url(../assets/icon/user.png);
+            }
+
+      }
+    }
+}
